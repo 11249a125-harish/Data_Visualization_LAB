@@ -21,66 +21,63 @@ To create and understand different basic graphs and visualizations using R progr
 - To understand the distribution of data.
 - To present analytical information clearly.
 
-
-# Experiment No. 4
-# Basic Visualization in R Programming
-
-# Aim:
-# To create basic graphs using R programming.
-
-# Program 1: Line Graph
+Program :1:Line Graph
 x <- c(1, 2, 3, 4, 5)
 y <- c(10, 15, 12, 18, 20)
-
-png("LineGraph.png")
-plot(x, y, type="o", col="blue",
+plot(x, y, type="o",
      main="Line Graph",
-     xlab="X Values", ylab="Y Values")
-dev.off()
-cat("LineGraph.png created\n")
+     xlab="X Values",
+     ylab="Y Values")
 
-# Program 2: Bar Chart
+Program 2: Bar Chart
+
 subjects <- c("Python", "Java", "R", "Tableau", "SQL")
 marks <- c(85, 78, 82, 90, 88)
-
-png("BarChart.png")
-barplot(marks, names.arg=subjects, col="blue",
+barplot(marks,
+        names.arg=subjects,
         main="Marks by Subject",
-        xlab="Subject", ylab="Marks")
-dev.off()
-cat("BarChart.png created\n")
+        xlab="Subject",
+        ylab="Marks")
 
-# Program 3: Pie Chart
+Program 3: Pie Chart
+
 values <- c(35, 25, 20, 20)
 labels <- c("Python", "Java", "R", "Tableau")
+pie(values,
+    labels=labels,
+    main="Technology Usage")
 
-png("PieChart.png")
-pie(values, labels=labels, main="Technology Usage")
-dev.off()
-cat("PieChart.png created\n")
 
-# Program 4: Scatter Plot
+Program 4: Scatter Plot
+
 hours <- c(1, 2, 3, 4, 5, 6)
 marks <- c(45, 50, 58, 65, 72, 80)
-
-png("ScatterPlot.png")
-plot(hours, marks, pch=19, col="red",
+plot(hours, marks,
      main="Study Hours vs Marks",
-     xlab="Study Hours", ylab="Marks")
-dev.off()
-cat("ScatterPlot.png created\n")
+     xlab="Study Hours",
+     ylab="Marks",
+     pch=19)
 
-# Program 5: Histogram
+
+Program 5: Histogram
+
 marks <- c(45, 50, 52, 55, 58, 60, 62, 65,
            68, 70, 72, 75, 78, 80, 82, 85,
            88, 90)
-
-png("Histogram.png")
-hist(marks, breaks=5, col="lightblue",
+hist(marks,
+     breaks=5,
      main="Distribution of Marks",
-     xlab="Marks", ylab="Frequency")
-dev.off()
-cat("Histogram.png created\n")
+     xlab="Marks",
+     ylab="Frequency")
 
-# Result
-cat("All five graphs created successfully!\n")
+
+Libraries        Functions Used
+- plot()         Creates line graphs and scatter plots.
+- barplot()      Creates bar charts.
+- pie()          Creates pie charts.
+- hist()         Creates histograms.
+- Base R graphicsProvides built-in visualization functions without requiring external packages.
+
+
+//Result:
+Thus, five basic visualizations—line graph, bar chart, pie chart, scatter plot, and histogram—were successfully created using R programming. These graphs help represent data visually and understand trends, category comparisons, proportions, relationships, and data distributions.
