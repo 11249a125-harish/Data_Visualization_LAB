@@ -1,0 +1,29 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+data = pd.read_csv("sales_data.csv")
+data.columns = data.columns.str.strip()
+
+# Bar chart: Sales by City
+data.groupby("City")["Sales"].sum().plot(kind="bar")
+plt.title("Sales by City")
+plt.xlabel("City")
+plt.ylabel("Sales")
+plt.show()
+
+# Pie chart: Sales by Region
+data.groupby("Region")["Sales"].sum().plot(
+    kind="pie", autopct="%1.1f%%"
+)
+plt.title("Sales by Region")
+plt.ylabel("")
+plt.show()
+
+# Line chart: Sales vs Quantity
+plt.plot(data["Quantity"], data["Sales"], marker="o")
+plt.title("Sales vs Quantity")
+plt.xlabel("Quantity")
+plt.ylabel("Sales")
+plt.show()
