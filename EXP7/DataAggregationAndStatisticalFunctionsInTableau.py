@@ -1,66 +1,54 @@
-## Experiment No. 6
-## Data Aggregation and Statistical Functions in Tableau
-//Aim:
-To perform data aggregation and apply statistical functions in Tableau for effective data analysis.
+# Experiment No. 7
+# Aim: To create scatter plots and map-based visualizations using Tableau.
+'''
+Algorithm
 
-//Uses:
-- To calculate total sales.
-- To determine average values.
-- To identify minimum and maximum values.
-- To compare different categories.
-- To summarize large datasets.
-- To support data-driven decision-making.
+1.Open Tableau Public.
+2.Connect to the dataset.
+3.Identify geographical and numerical fields.
+4.Drag the required fields to Rows and Columns.
+5.Select Scatter Plot from Show Me.
+6.Add map features if geographical data is present.
+7.Analyze and save the visualization.'''
 
-//Algorithm:
-
-1. Open Tableau Public.
-2. Connect to the required dataset.
-3. Load the sales data.
-4. Select the required fields for analysis.
-5. Apply aggregation and statistical functions.
-6. Group the data by category.
-7. Analyze and save the results.
-
-//Program:
+# Program
 
 import pandas as pd
+import matplotlib.pyplot as plt
+
 # Load dataset
-data = pd.read_csv("sales_data.csv")
-# Total Sales
-print("Total Sales:", data["Sales"].sum())
-# Average Sales
-print("Average Sales:", data["Sales"].mean())
-# Minimum Sales
-print("Minimum Sales:", data["Sales"].min())
-# Maximum Sales
-print("Maximum Sales:", data["Sales"].max())
-# Group by Category
-print("\nSales by Category:")
-print(data.groupby("Category")["Sales"].sum())
+data = pd.read_csv("sales_map_data.csv")
 
-//Libraries    Functions Used
-Pandas         A Python library used for data manipulation, aggregation, and statistical calculations.
-read_csv()     Reads the dataset from a CSV file.
-sum()          Calculates the total.
-mean()         Calculates the average.
-min()          Returns the minimum value.
-max()          Returns the maximum value.
-groupby()      Groups data according to specified categories.
+# Rename columns
+data.columns = ["Sales", "Quantity"]
 
-//Sample Output:
+# Scatter plot
+plt.scatter(data["Sales"], data["Quantity"])
+plt.xlabel("Sales")
+plt.ylabel("Quantity")
+plt.title("Scatter Plot: Sales vs Quantity")
+plt.grid(True)
+plt.show()
 
-For the sample sales dataset used in the previous experiment, the output is:
-Total Sales: 115000
-Average Sales: 19166.666666666668
-Minimum Sales: 3000
-Maximum Sales: 55000
 
-Sales by Category:
-Category
-Electronics    78000
-Furniture      37000
-Name: Sales, dtype: int64
+'''Program Explanation
 
-//Result:
+"import pandas": Imports the Pandas library.
+"import matplotlib.pyplot": Imports the plotting library.
+"read_csv()": Loads the CSV file.
+"plt.scatter()": Creates a scatter plot.
+"plt.xlabel()": Labels the X-axis as Sales.
+"plt.ylabel()": Labels the Y-axis as Quantity.
+"plt.title()": Adds a title to the graph.
+"plt.show()": Displays the scatter plot.
 
-Thus, data aggregation and statistical analysis were successfully performed on the sales dataset. Total sales, average sales, minimum sales, maximum sales, and category-wise sales were calculated using Pandas functions, demonstrating the principles of data aggregation used in Tableau.
+Libraries Used
+
+- Pandas: Used for loading and handling the dataset.
+- Matplotlib: Used for creating the scatter plot.
+
+5. Result
+
+Thus, a scatter plot was created successfully to show the relationship between sales and quantity.'''
+
+
