@@ -1,4 +1,4 @@
-##Experiment No.3
+##Experiment No.2
 ##Basic Visualization in Python
 
 '''Aim:
